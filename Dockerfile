@@ -60,7 +60,9 @@ RUN yum install -y bison git wget openssl-devel && \
     git submodule init && \
     git submodule update && \
     cd /usr/local/src/ngx_mruby && \
-    sed -i.orig "s|conf.gem :git => 'git://github.com/matsumoto-r/mruby-memcached.git'|#&|" build_config.rb && \
+    sed -i.orig "s|conf.gem :git => 'git://github.com/matsumoto-r/mruby-memcached.git'|#&|;/^  conf.gem :git => 'git:\/\/github.com\/mattn\/mruby-onig-regexp.git'/a\
+\  conf.gem :git => 'git://github.com/iij/mruby-env.git'" \
+      build_config.rb && \
     cd /usr/local/src && \
     curl -O http://nginx.org/download/nginx-1.4.7.tar.gz && \
     tar xf nginx-1.4.7.tar.gz && \
