@@ -23,9 +23,9 @@ RUN yum install -y tar gcc && \
 # build redis
 RUN yum install -y curl tar make gcc && \
     cd /usr/local/src && \
-    curl -O http://download.redis.io/releases/redis-2.8.8.tar.gz && \
-    tar xf redis-2.8.8.tar.gz && \
-    cd redis-2.8.8 && \
+    curl -O http://download.redis.io/releases/redis-2.8.9.tar.gz && \
+    tar xf redis-2.8.9.tar.gz && \
+    cd redis-2.8.9 && \
     make && \
     make install
 
