@@ -64,12 +64,12 @@ RUN yum install -y bison git wget openssl-devel && \
 \  conf.gem :git => 'git://github.com/iij/mruby-env.git'" \
       build_config.rb && \
     cd /usr/local/src && \
-    curl -O http://nginx.org/download/nginx-1.4.7.tar.gz && \
-    tar xf nginx-1.4.7.tar.gz && \
+    curl -O http://nginx.org/download/nginx-1.6.0.tar.gz && \
+    tar xf nginx-1.6.0.tar.gz && \
     cd /usr/local/src/ngx_mruby && \
     PATH=/usr/local/ruby/bin:$PATH \
       NGINX_CONFIG_OPT_ENV='--prefix=/usr/local/nginx' \
-      NGINX_SRC_ENV='/usr/local/src/nginx-1.4.7' \
+      NGINX_SRC_ENV='/usr/local/src/nginx-1.6.0' \
       sh build.sh
 
 # build nginx with mruby
@@ -96,7 +96,7 @@ RUN yum install -y bison git wget openssl-devel && \
 #
 RUN yum install -y openssl-devel zlib-devel libxslt-devel gd-devel \
       GeoIP-devel httpd-tools && \
-    cd /usr/local/src/nginx-1.4.7 && \
+    cd /usr/local/src/nginx-1.6.0 && \
     ./configure --prefix=/usr/local/nginx \
       --user=nginx \
       --group=nginx \
